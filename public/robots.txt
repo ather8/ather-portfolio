@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://your-deployed-url.com/sitemap.xml
+Sitemap: https://ather-portfolio-five.vercel.app/sitemap.xml
