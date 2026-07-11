@@ -39,7 +39,7 @@ export default function Hero() {
             </a>
             <a
               href="/resume.pdf"
-              download
+              target="_blank" rel="noopener noreferrer"
               className="font-mono text-xs tracking-[0.1em] uppercase border border-line/30 text-ink-dim px-5 py-3 hover:text-ink hover:border-line/50 transition-colors"
             >
               Résumé

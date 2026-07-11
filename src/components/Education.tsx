@@ -24,7 +24,7 @@ const STEPS: EduStep[] = [
     tag: "ED-03",
     place: "Military Service",
     detail: "National service",
-    range: "Sep 2024 — Present",
+    range: "Dec 2024 — Dec 2025",
   },
 ];
 
