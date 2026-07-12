@@ -25,9 +25,9 @@ export default function Hero() {
             Ather Sayed
           </h1>
           <p className="text-ink-dim text-base md:text-lg leading-relaxed max-w-lg mb-8">
-            I build and ship full-stack production systems — from restaurant
-            operations to hospital records to fraud detection — not just
-            prototypes.
+            I build and ship full-stack production systems — from
+            restaurant operations to clinic management to fraud detection —
+            not just prototypes.
           </p>
 
           <div className="flex flex-wrap gap-3">

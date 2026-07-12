@@ -5,7 +5,7 @@ type App = {
 };
 
 const APPS: App[] = [
-  { name: "Hospital System", tag: "HS-01", live: true },
+  { name: "Clinic System", tag: "CL-01", live: true },
   { name: "PizzaStore", tag: "PZ-02", live: true },
   { name: "Fraud Detection", tag: "FD-03", live: true },
   { name: "Game Hub", tag: "GH-04", live: true },

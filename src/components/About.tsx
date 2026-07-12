@@ -33,9 +33,10 @@ export default function About() {
             <p className="text-ink-dim leading-relaxed mb-4">
               My work spans four live production applications: a restaurant
               management system with demand forecasting and natural-language
-              queries, a hospital records system, a fraud-detection
-              dashboard, and a multiplayer game hub. Each one shipped,
-              deployed, and used — not left as a notebook or a local demo.
+              queries, a mobile-first clinic management system with AI-assisted
+              triage, a fraud-detection dashboard, and a game-discovery web app.
+              Each one shipped, deployed, and used — not left as a notebook or
+              a local demo.
             </p>
             <p className="text-ink-dim leading-relaxed">
               I care about the full lifecycle: data modeling, access control,
