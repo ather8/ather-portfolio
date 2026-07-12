@@ -33,6 +33,7 @@ const CATEGORIES: SkillCategory[] = [
     title: "Backend",
     skills: [
       { name: "FastAPI", level: "Core" },
+      { name: "Django / DRF", level: "Proficient" },
       { name: "Python", level: "Core" },
       { name: "SQLAlchemy", level: "Proficient" },
       { name: "REST APIs", level: "Core" },

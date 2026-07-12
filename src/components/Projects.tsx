@@ -14,21 +14,21 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    id: "hospital",
+    id: "clinic",
     tag: "PR-01",
-    name: "AI-Powered Hospital System",
-    summary: "Full-stack hospital platform with AI triage, RAG clinical search, and role-based access.",
+    name: "Clinic System",
+    summary: "Mobile-first clinic management system with a patient portal, staff dashboard, and AI-assisted clinical tools.",
     situation:
-      "Hospitals need to manage patients, appointments, billing, and records across very different staff roles, while giving patients their own simple self-service view.",
+      "Clinics need to manage patients, appointments, and billing across different staff roles, while giving patients a simple self-service way to book and track care from their phone.",
     task:
-      "Build a single platform that serves five distinct roles (admin, doctor, nurse, receptionist, patient) with proper access boundaries, plus AI tooling to speed up clinical work.",
+      "Rebuild an earlier prototype into a proper mobile-first PWA that serves five distinct roles with the right access boundaries, plus AI tooling to speed up clinical work.",
     action:
-      "Built a FastAPI + PostgreSQL backend with RBAC across 5 roles, JWT and Google OAuth login, and a React/TypeScript frontend. Added an AI triage chatbot with multi-turn session memory, a RAG-based clinical search pipeline over medical guidelines using FAISS, OCR document intake, and audit logging on every write action.",
+      "Built a Django REST Framework + PostgreSQL backend with JWT auth and role-based access across 5 roles (admin, doctor, nurse, receptionist, patient), automatic double-booking prevention, and a billing workflow. Added an AI triage chat, AI report summarization via Gemini, and OCR document extraction. Shipped as an installable PWA with a React + TypeScript + Vite frontend.",
     result:
-      "A deployed platform live at ai-powered-hospital-system.vercel.app, covering patient records, scheduling, billing, and AI-assisted triage — not a local demo.",
-    tags: ["React", "FastAPI", "PostgreSQL", "RAG", "RBAC"],
-    demoUrl: "https://ai-powered-hospital-system.vercel.app/",
-    codeUrl: "https://github.com/ather8/AI-Powered-Hospital-System",
+      "A deployed, installable mobile-first system live at clinic-system.up.railway.app, covering patient booking, staff workflows, and AI-assisted triage.",
+    tags: ["Django", "React", "PostgreSQL", "PWA", "Gemini"],
+    demoUrl: "https://clinic-system.up.railway.app/",
+    codeUrl: "https://github.com/ather8/clinic-system",
   },
   {
     id: "pizzastore",
