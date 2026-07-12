@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -13,7 +15,13 @@ function App() {
   const isKnownRoute = window.location.pathname === "/";
 
   if (!isKnownRoute) {
-    return <NotFound />;
+    return (
+      <>
+        <NotFound />
+        <Analytics />
+        <SpeedInsights />
+      </>
+    );
   }
 
   return (
@@ -29,6 +37,8 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <Analytics />
+      <SpeedInsights />
     </>
   );
 }
