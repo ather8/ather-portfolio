@@ -31,18 +31,19 @@ export default function About() {
               not just proof-of-concepts.
             </h2>
             <p className="text-ink-dim leading-relaxed mb-4">
-              My work spans four live production applications: a restaurant
-              management system with demand forecasting and natural-language
-              queries, a mobile-first clinic management system with AI-assisted
-              triage, a fraud-detection dashboard, and a game-discovery web app.
-              Each one shipped, deployed, and used — not left as a notebook or
-              a local demo.
+              Since completing military service in December 2025, I've shipped
+              four live production applications: a restaurant management system
+              with demand forecasting and natural-language queries, a
+              mobile-first clinic management system with AI-assisted triage, a
+              fraud-detection dashboard, and a game-discovery web app built
+              independently during my undergraduate studies. Each one shipped,
+              deployed, and used — not left as a notebook or a local demo.
             </p>
             <p className="text-ink-dim leading-relaxed">
               I care about the full lifecycle: data modeling, access control,
-              API design, frontend polish, and deployment. I'd rather ship
-              one thing that works end-to-end than ten things that only
-              work on my machine.
+              API design, frontend polish, and deployment. I'd rather ship one
+              thing that works end-to-end than ten things that only work on my
+              machine.
             </p>
           </div>
 
