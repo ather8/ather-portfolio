@@ -32,12 +32,14 @@ export default function About() {
             </h2>
             <p className="text-ink-dim leading-relaxed mb-4">
               Since completing military service in December 2025, I've shipped
-              four live production applications: a restaurant management system
-              with demand forecasting and natural-language queries, a
-              mobile-first clinic management system with AI-assisted triage, a
-              fraud-detection dashboard, and a game-discovery web app built
-              independently during my undergraduate studies. Each one shipped,
-              deployed, and used — not left as a notebook or a local demo.
+              three live production applications, each pairing a real full-stack
+              foundation with production AI features: a restaurant management
+              system with XGBoost demand forecasting and a Gemini-powered query
+              interface, a mobile-first clinic management system with
+              AI-assisted triage and OCR, and a real-time fraud-detection system
+              combining a supervised model with an anomaly detector. Each one
+              shipped, deployed, and used — not left as a notebook or a local
+              demo.
             </p>
             <p className="text-ink-dim leading-relaxed">
               I care about the full lifecycle: data modeling, access control,

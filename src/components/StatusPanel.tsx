@@ -8,7 +8,6 @@ const APPS: App[] = [
   { name: "Clinic System", tag: "CL-01", live: true },
   { name: "PizzaStore", tag: "PZ-02", live: true },
   { name: "Fraud Detection", tag: "FD-03", live: true },
-  { name: "Game Hub", tag: "GH-04", live: true },
 ];
 
 function Dot({ live }: { live: boolean }) {
@@ -49,12 +48,18 @@ export default function StatusPanel() {
           >
             <div className="flex items-center gap-3 min-w-0">
               <Dot live={app.live} />
-              <span className="font-mono text-[13px] text-ink truncate">{app.name}</span>
+              <span className="font-mono text-[13px] text-ink truncate">
+                {app.name}
+              </span>
             </div>
             <div className="flex items-center gap-3 shrink-0">
-              <span className="font-mono text-[10px] text-ink-faint">{app.tag}</span>
+              <span className="font-mono text-[10px] text-ink-faint">
+                {app.tag}
+              </span>
               {app.live && (
-                <span className="font-mono text-[10px] tracking-[0.1em] text-accent">LIVE</span>
+                <span className="font-mono text-[10px] tracking-[0.1em] text-accent">
+                  LIVE
+                </span>
               )}
             </div>
           </li>

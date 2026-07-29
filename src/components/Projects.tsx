@@ -68,23 +68,6 @@ const PROJECTS: Project[] = [
     demoUrl: "https://fraudwatchai.up.railway.app/",
     codeUrl: "https://github.com/ather8/Fraud_Detection_System",
   },
-  {
-    id: "gamehub",
-    tag: "PR-04",
-    date: "OCT 2023",
-    name: "Game Hub",
-    summary: "Frontend showcase pulling live game data from an external API.",
-    situation:
-      "A portfolio benefits from at least one project that's purely about frontend craft — clean UI, responsive layout, and working with external data — separate from the backend-heavy projects.",
-    task: "Build a polished, responsive game-browsing app that fetches and displays real game data, with reusable, maintainable components.",
-    action:
-      "Built with React, TypeScript, and Vite, styled with Tailwind, fetching dynamic game data from an external API through modular, reusable components, with ESLint/Prettier enforced for code quality. Built independently during undergraduate studies, ahead of the other three projects.",
-    result:
-      "A deployed, responsive frontend showcase demonstrating clean component architecture and API-driven UI, live on Vercel.",
-    tags: ["React", "TypeScript", "Vite", "Tailwind"],
-    demoUrl: "https://game-hub-six-tau.vercel.app/",
-    codeUrl: "https://github.com/ather8/game-hub",
-  },
 ];
 
 function ProjectCard({ project }: { project: Project }) {
