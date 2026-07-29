@@ -101,12 +101,15 @@ export default function Skills() {
   return (
     <section id="skills" className="py-20 md:py-28">
       <div className="container-sheet">
-        <p className="eyebrow mb-3">04 / Skills</p>
+        <h2 className="eyebrow mb-3">04 / Skills</h2>
         <div className="sheet-rule" />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {CATEGORIES.map((cat) => (
-            <div key={cat.tag} className="border border-line/20 bg-bg-panel p-5">
+            <div
+              key={cat.tag}
+              className="border border-line/20 bg-bg-panel p-5"
+            >
               <div className="flex items-baseline gap-2 mb-4">
                 <span className="font-mono text-[11px] text-accent tracking-[0.08em]">
                   {cat.tag}
@@ -119,7 +122,9 @@ export default function Skills() {
                     key={skill.name}
                     className="flex items-center justify-between gap-3"
                   >
-                    <span className="text-[13px] text-ink-dim">{skill.name}</span>
+                    <span className="text-[13px] text-ink-dim">
+                      {skill.name}
+                    </span>
                     <SignalBars level={skill.level} />
                   </li>
                 ))}

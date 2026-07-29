@@ -32,7 +32,7 @@ export default function Education() {
   return (
     <section id="education" className="py-20 md:py-28">
       <div className="container-sheet">
-        <p className="eyebrow mb-3">02 / Education</p>
+        <h2 className="eyebrow mb-3">02 / Education</h2>
         <div className="sheet-rule" />
 
         <div className="relative max-w-2xl">

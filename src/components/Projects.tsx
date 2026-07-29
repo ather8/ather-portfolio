@@ -188,7 +188,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 md:py-28">
       <div className="container-sheet">
-        <p className="eyebrow mb-3">03 / Projects</p>
+        <h2 className="eyebrow mb-3">03 / Projects</h2>
         <div className="sheet-rule" />
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">

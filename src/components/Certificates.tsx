@@ -184,7 +184,9 @@ function Lightbox({
           <span className="font-mono text-[10px] text-ink-faint tracking-[0.08em]">
             {cert.tag}
           </span>
-          <h3 className="text-base font-semibold text-ink mt-1">{cert.title}</h3>
+          <h3 className="text-base font-semibold text-ink mt-1">
+            {cert.title}
+          </h3>
           <p className="text-sm text-ink-dim mt-0.5">
             {cert.issuer} · {cert.date}
           </p>
@@ -210,7 +212,7 @@ export default function Certificates() {
   return (
     <section id="certificates" className="py-20 md:py-28">
       <div className="container-sheet">
-        <p className="eyebrow mb-3">05 / Certificates</p>
+        <h2 className="eyebrow mb-3">05 / Certificates</h2>
         <div className="sheet-rule" />
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -232,7 +234,9 @@ export default function Certificates() {
                 <span className="font-mono text-[10px] text-ink-faint tracking-[0.08em]">
                   {cert.tag}
                 </span>
-                <p className="text-xs text-ink-dim mt-1 line-clamp-2">{cert.title}</p>
+                <p className="text-xs text-ink-dim mt-1 line-clamp-2">
+                  {cert.title}
+                </p>
               </div>
             </button>
           ))}
