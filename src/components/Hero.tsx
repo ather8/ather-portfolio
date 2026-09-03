@@ -61,7 +61,7 @@ export default function Hero() {
               ["3", "Live apps"],
               ["48K", "Orders trained on"],
               ["5", "RBAC roles"],
-              ["13", "Certifications"],
+              ["18", "Certifications"],
             ].map(([value, label]) => (
               <div key={label}>
                 <div className="font-mono text-xl text-ink">{value}</div>
