@@ -48,7 +48,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 md:py-28">
       <div className="container-sheet">
-        <p className="eyebrow mb-3">06 / Contact</p>
+        <p className="eyebrow mb-3">07 / Contact</p>
         <div className="sheet-rule" />
 
         <div className="grid md:grid-cols-[1fr_1.2fr] gap-12 md:gap-16">

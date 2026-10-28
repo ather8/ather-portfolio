@@ -173,6 +173,15 @@ const CERTIFICATES: Certificate[] = [
     verifyUrl: "https://coursera.org/verify/7V5ANTAY9QKQ",
     image: "/certificates/cert-18.jpg",
   },
+  {
+    id: "c19",
+    tag: "CT-19",
+    title: "Machine Learning for Data Analysis",
+    issuer: "Digital Egypt Youth Program (MCIT / NTI)",
+    date: "Apr 2026",
+    verifyUrl: "",
+    image: "/certificates/cert-19.jpg",
+  },
 ];
 
 function Lightbox({
@@ -257,7 +266,7 @@ export default function Certificates() {
   return (
     <section id="certificates" className="py-20 md:py-28">
       <div className="container-sheet">
-        <h2 className="eyebrow mb-3">05 / Certificates</h2>
+        <h2 className="eyebrow mb-3">06 / Certificates</h2>
         <div className="sheet-rule" />
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">

@@ -12,10 +12,15 @@ Personal portfolio site built from scratch with a custom "technical schematic" d
 
 ## Sections
 
-- **Hero** — headline, photo, and a live "system status" panel referencing the four production apps below
+- **Hero** — headline, photo, and a "system status" panel: three live apps plus the three Memphis Tours systems (pilot / shadow / internal)
 - **About** — capability breakdown (Full-Stack / Backend / Applied ML)
+- **Experience** — AI Specialist intern at Memphis Tours (Oct 2026 –), plus the independent ML/full-stack specialization
 - **Education** — chronological timeline (school → university → military service)
-- **Projects** — four live, deployed full-stack apps with STAR-format case studies:
+- **Projects** — STAR-format case studies in two groups. Group A, internship work at Memphis Tours (internal systems, status badge instead of demo/code links):
+  - Momo Messenger AI Sales Assistant — ERP-verified pricing, reply price check, first-quotes review
+  - Request Spam Detection — multilingual embeddings classifier, sealed test, fairness audit, shadow mode
+  - SalesAI Draft Emails & Itinerary Offers — deterministic gate, code-built offers, model re-voices only
+  Group B, personal projects (live, deployed):
   - [AI-Powered Hospital System](https://github.com/ather8/AI-Powered-Hospital-System) — RBAC, AI triage chatbot, RAG clinical search
   - [PizzaStore](https://github.com/ather8/Full-Stack-Pizza-Store) — XGBoost demand forecasting, Gemini natural-language queries
   - [FraudWatch AI](https://github.com/ather8/Fraud_Detection_System) — XGBoost + Isolation Forest fraud detection, ONNX-served

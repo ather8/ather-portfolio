@@ -12,7 +12,7 @@ const CAPABILITIES = [
   {
     code: "AI",
     title: "Applied ML/AI",
-    desc: "Forecasting (XGBoost), natural-language querying (Gemini), and fraud-detection models wired into live products.",
+    desc: "LLM guardrails, embeddings classifiers, forecasting (XGBoost) and fraud detection, wired into real products and evaluated honestly.",
   },
 ];
 
@@ -32,14 +32,20 @@ export default function About() {
             </h2>
             <p className="text-ink-dim leading-relaxed mb-4">
               Since completing military service in December 2025, I've shipped
-              three live production applications, each pairing a real full-stack
-              foundation with production AI features: a restaurant management
-              system with XGBoost demand forecasting and a Gemini-powered query
-              interface, a mobile-first clinic management system with
-              AI-assisted triage and OCR, and a real-time fraud-detection system
-              combining a supervised model with an anomaly detector. Each one
-              shipped, deployed, and used — not left as a notebook or a local
-              demo.
+              three live full-stack applications — a restaurant system with
+              XGBoost demand forecasting and a Gemini query interface, a
+              mobile-first clinic system with AI triage and OCR, and a
+              real-time fraud detector — each deployed and used, not left as a
+              notebook.
+            </p>
+            <p className="text-ink-dim leading-relaxed mb-4">
+              Since 1 October 2026 I've been working as an AI Specialist intern at
+              Memphis Tours, applying that to a travel company's sales work: a
+              Messenger assistant that may only quote prices the ERP provided,
+              a precision-first spam detector for inbound requests, and a
+              draft-email and itinerary-offer assistant where a deterministic
+              gate sits in front of every draft. The lesson that keeps
+              repeating: the model writes the words, code owns the facts.
             </p>
             <p className="text-ink-dim leading-relaxed">
               I care about the full lifecycle: data modeling, access control,

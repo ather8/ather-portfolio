@@ -27,8 +27,9 @@ export default function Hero() {
             Ather Sayed
           </h1>
           <p className="text-ink-dim text-base md:text-lg leading-relaxed max-w-lg mb-8">
-            I build and ship full-stack production systems — from restaurant
-            operations to clinic management to fraud detection — not just
+            Currently an AI Specialist intern at Memphis Tours (since 1 October 2026). I build and ship full-stack
+            systems with AI inside them — sales assistants, spam detection,
+            restaurant and clinic platforms, fraud detection — not just
             prototypes.
           </p>
 
@@ -59,9 +60,9 @@ export default function Hero() {
           <div className="flex flex-wrap gap-x-8 gap-y-3 mt-10 pt-8 border-t border-line/15">
             {[
               ["3", "Live apps"],
+              ["3", "Memphis AI systems"],
               ["48K", "Orders trained on"],
-              ["5", "RBAC roles"],
-              ["18", "Certifications"],
+              ["19", "Certifications"],
             ].map(([value, label]) => (
               <div key={label}>
                 <div className="font-mono text-xl text-ink">{value}</div>

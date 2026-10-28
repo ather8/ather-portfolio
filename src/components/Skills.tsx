@@ -26,6 +26,7 @@ const CATEGORIES: SkillCategory[] = [
       { name: "TypeScript", level: "Core" },
       { name: "JavaScript", level: "Core" },
       { name: "SQL", level: "Core" },
+      { name: "PHP", level: "Familiar" },
     ],
   },
   {
@@ -40,6 +41,8 @@ const CATEGORIES: SkillCategory[] = [
       { name: "LLMs / RAG", level: "Proficient" },
       { name: "NLP", level: "Proficient" },
       { name: "Computer Vision", level: "Proficient" },
+      { name: "Text Embeddings", level: "Proficient" },
+      { name: "LLM Guardrails & Evals", level: "Proficient" },
     ],
   },
   {
@@ -61,6 +64,8 @@ const CATEGORIES: SkillCategory[] = [
     skills: [
       { name: "Docker", level: "Core" },
       { name: "PostgreSQL", level: "Core" },
+      { name: "MySQL", level: "Proficient" },
+      { name: "pytest", level: "Proficient" },
       { name: "Git", level: "Core" },
       { name: "Linux", level: "Proficient" },
       { name: "CI/CD", level: "Proficient" },
@@ -89,7 +94,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-20 md:py-28">
       <div className="container-sheet">
-        <h2 className="eyebrow mb-3">04 / Skills</h2>
+        <h2 className="eyebrow mb-3">05 / Skills</h2>
         <div className="sheet-rule" />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

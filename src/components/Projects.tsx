@@ -11,6 +11,12 @@ type Project = {
   tags: string[];
   demoUrl?: string;
   codeUrl?: string;
+  /** Work done for an employer: no public demo or code, shows a status badge instead. */
+  work?: {
+    company: string;
+    status: string;
+    note: string;
+  };
 };
 
 const PROJECTS: Project[] = [
@@ -70,6 +76,73 @@ const PROJECTS: Project[] = [
   },
 ];
 
+
+const WORK_PROJECTS: Project[] = [
+  {
+    id: "momo",
+    tag: "MT-01",
+    date: "OCT 2026",
+    name: "Momo — Messenger AI Sales Assistant",
+    summary:
+      "A sales assistant that quotes catalogue trips on Messenger, built around one rule: it never states a price it did not get from the ERP.",
+    situation:
+      "A sales assistant that talks to customers can invent or mis-add a number, and a wrong quote costs money and trust. The assistant also needed to reply in the customer's own language and get Messenger leads into the ERP.",
+    task: "Make \"never quote a wrong price\" true in code rather than only in the prompt, and give the team a way to inspect real quotes before customers see them.",
+    action:
+      "Built an ERP pricing client that reads the exact price for a room type and travel date, and a price tool that turns a party into rooms and totals it in code. The model only writes the wording: a reply price check strips any amount that did not come from a verified quote. Anything unclear (ambiguous date, children, large groups, failed lookup) is refused and handed to a person. Added a first-quotes review that holds each quote for human approval, with a portal screen and command line, plus a language fix and a rule that pushes Messenger leads to the ERP. Every new behaviour ships switched off and fails closed.",
+    result:
+      "A pilot assistant with automated tests across the pricing, review and language layers, including a headless-browser test of the review screen and mutation checks that confirm the safety tests fail when a guard is removed. During the pilot, a person approves quotes before customers see them.",
+    tags: ["PHP", "LLM guardrails", "ERP API", "Messenger", "Playwright"],
+    work: {
+      company: "Memphis Tours",
+      status: "Pilot",
+      note: "Internal company system — no public demo or code.",
+    },
+  },
+  {
+    id: "spam",
+    tag: "MT-02",
+    date: "OCT 2026",
+    name: "Request Spam Detection",
+    summary:
+      "A multilingual classifier that flags junk, test and spam notes in inbound travel requests, tuned to avoid flagging real clients.",
+    situation:
+      "Inbound travel requests were mixed with test messages, keyboard mash, spam and cold vendor pitches. The ERP had no usable labels, and wrongly flagging a real traveller costs far more than letting junk through.",
+    task: "Build a spam detector from scratch that is precision-first, works across languages without treating language or script as evidence of spam, and is evaluated honestly before anyone acts on it.",
+    action:
+      "Created the labels (LLM labelling plus hand-reviewed sets), then compared three approaches: rules only, TF-IDF + logistic regression, and multilingual embeddings + logistic regression. The simplest strong one won, with calibrated probabilities and a flag cut-off chosen for high precision. Added transparent safety rules, a short-note policy, a time-based split that keeps near-duplicate senders out of training, a sealed test set that can only be scored once, and a fairness audit across script, channel, country and device.",
+    result:
+      "A saved model and scoring pipeline with an evaluation write-up that is explicit about where the evidence is thin. It runs in shadow mode: verdicts are written to a file and nothing is deleted or acted on until they are compared with what reps actually do.",
+    tags: ["Python", "scikit-learn", "Embeddings", "NLP", "Fairness audit"],
+    work: {
+      company: "Memphis Tours",
+      status: "Shadow mode",
+      note: "Internal company system — no public demo or code.",
+    },
+  },
+  {
+    id: "salesai",
+    tag: "MT-03",
+    date: "OCT 2026",
+    name: "SalesAI — Draft Emails & Itinerary Offers",
+    summary:
+      "An assistant that drafts client emails and builds day-by-day itinerary offers for sales reps, with a deterministic gate in front of every draft.",
+    situation:
+      "Reps spend time hand-assembling package emails from the website's trip pages, and a model-written draft can mix languages, invent packages, add uninvited payment plans or leak internal costs.",
+    task: "Work on the draft-email pipeline and the package-offer builder so that every client-facing draft is in the client's language, uses only real products and carries no internal figures. The model must never be able to change a fact.",
+    action:
+      "On the draft side: lead form in, typed facts out, scoped catalogue search, brief, draft, then a gate of always-run checks (one company, one language, no unsolicited payment breakdown or discounts, only real products, no internal costs, no placeholders, no invented credentials). On the offer side: a rep picks a trip by website link or program id, the service finds it in the website catalogue and lays out the whole offer in code as typed pieces. Dates, prices and which list an item sits in are written by code and never sent to the model. The model re-voices only the opening and closing, and every returned segment is compared to its original for the same numbers, links and claims. If the model step fails, the rep still gets the code-built offer.",
+    result:
+      "A deployed FastAPI service covered by automated rule tests, plus golden tests that run the real model and assert the one honest invariant for a non-deterministic system: no violation ever gets through.",
+    tags: ["Python", "FastAPI", "Gemini / Vertex", "MySQL", "pytest"],
+    work: {
+      company: "Memphis Tours",
+      status: "Internal",
+      note: "Internal company system — no public demo or code.",
+    },
+  },
+];
+
 function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="relative border border-line/20 bg-bg-panel p-6 flex flex-col gap-4">
@@ -90,6 +163,11 @@ function ProjectCard({ project }: { project: Project }) {
             {project.name}
           </h3>
         </div>
+        {project.work && (
+          <span className="shrink-0 font-mono text-[10px] tracking-[0.08em] uppercase text-accent border border-accent/40 px-2 py-1">
+            {project.work.status}
+          </span>
+        )}
       </div>
 
       <p className="text-sm text-ink-dim leading-relaxed">{project.summary}</p>
@@ -141,6 +219,12 @@ function ProjectCard({ project }: { project: Project }) {
         ))}
       </div>
 
+      {project.work && (
+        <p className="font-mono text-[11px] tracking-[0.04em] text-ink-faint mt-2 pt-4 border-t border-line/10">
+          {project.work.company} · {project.work.note}
+        </p>
+      )}
+
       <div className="flex flex-col sm:flex-row gap-2.5 mt-2">
         {project.demoUrl && (
           <a
@@ -167,13 +251,43 @@ function ProjectCard({ project }: { project: Project }) {
   );
 }
 
+function GroupHeading({ tag, title, blurb }: { tag: string; title: string; blurb: string }) {
+  return (
+    <div className="mb-5 flex flex-col gap-1">
+      <div className="flex items-baseline gap-3">
+        <span className="font-mono text-[11px] text-accent tracking-[0.08em]">
+          {tag}
+        </span>
+        <h3 className="text-base font-semibold text-ink">{title}</h3>
+      </div>
+      <p className="text-sm text-ink-faint max-w-2xl">{blurb}</p>
+    </div>
+  );
+}
+
 export default function Projects() {
   return (
     <section id="projects" className="py-20 md:py-28">
       <div className="container-sheet">
-        <h2 className="eyebrow mb-3">03 / Projects</h2>
+        <h2 className="eyebrow mb-3">04 / Projects</h2>
         <div className="sheet-rule" />
 
+        <GroupHeading
+          tag="A"
+          title="AI Specialist internship — Memphis Tours"
+          blurb="Work from my current internship at Memphis Tours, where I've been an AI Specialist intern since 1 October 2026. These are internal company systems, so there are no public demos or code links."
+        />
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          {WORK_PROJECTS.map((p) => (
+            <ProjectCard key={p.id} project={p} />
+          ))}
+        </div>
+
+        <GroupHeading
+          tag="B"
+          title="Personal projects"
+          blurb="Live, deployed full-stack apps I built on my own."
+        />
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
           {PROJECTS.map((p) => (
             <ProjectCard key={p.id} project={p} />

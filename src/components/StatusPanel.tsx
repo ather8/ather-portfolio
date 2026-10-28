@@ -2,12 +2,17 @@ type App = {
   name: string;
   tag: string;
   live: boolean;
+  /** Text shown instead of LIVE for internal / not-yet-public systems */
+  state?: string;
 };
 
 const APPS: App[] = [
   { name: "Clinic System", tag: "CL-01", live: true },
   { name: "PizzaStore", tag: "PZ-02", live: true },
   { name: "Fraud Detection", tag: "FD-03", live: true },
+  { name: "Momo Sales Assistant", tag: "MT-01", live: false, state: "PILOT" },
+  { name: "Spam Detection", tag: "MT-02", live: false, state: "SHADOW" },
+  { name: "SalesAI Offers", tag: "MT-03", live: false, state: "INTERNAL" },
 ];
 
 function Dot({ live }: { live: boolean }) {
@@ -56,11 +61,13 @@ export default function StatusPanel() {
               <span className="font-mono text-[10px] text-ink-faint">
                 {app.tag}
               </span>
-              {app.live && (
-                <span className="font-mono text-[10px] tracking-[0.1em] text-accent">
-                  LIVE
-                </span>
-              )}
+              <span
+                className={`font-mono text-[10px] tracking-[0.1em] ${
+                  app.live ? "text-accent" : "text-ink-faint"
+                }`}
+              >
+                {app.live ? "LIVE" : app.state}
+              </span>
             </div>
           </li>
         ))}
